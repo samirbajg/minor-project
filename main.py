@@ -92,7 +92,8 @@ def create_app():
     def result():
         url = request.form.get('url')
         try:
-            url.raise_for_status()
+            r = requests.get(url, timeout = 1)
+            r.raise_for_status()
 
             comments = get_comments(url)
             temp = []
@@ -125,7 +126,7 @@ def create_app():
                     neu+=1
             e_no = [ang,love,fear,joy,sad,sur]
             return render_template('result.html',n=len(clean_comments),ang=ang,love=love,fear=fear,joy=joy,sad=sad,sur=sur,e_no=e_no,comments=comments,labels=labels)
-        except Exception as e:
+        except requests.exceptions.HTTPError as err:
             error_msg = f"Error: Invalid URL"
             return render_template('home.html',error_msg = error_msg)
     return app
