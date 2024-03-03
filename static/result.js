@@ -11,7 +11,7 @@ const labels = ['Anger', 'Love', 'Fear', 'Joy', 'Sadness', 'Surprise'];
         '#000000', // Fear
         '#ffc107', // Joy
         '#007bff', // Sadness
-        'orange', // Surprise
+        'cyan', // Surprise
       ]
     }]
   };
