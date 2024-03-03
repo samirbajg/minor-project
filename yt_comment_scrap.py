@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def get_comments(link):
     data=[]
     url= link
-
+ 
     option=ChromeOptions()
     option.add_argument("--headless")
     option.add_argument("--mute-audio")
