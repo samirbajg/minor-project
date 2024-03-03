@@ -16,7 +16,7 @@ def get_comments(link):
     with Chrome(options=option) as driver:
         wait = WebDriverWait(driver,10)
         driver.get(url)
-        time.sleep(5)
+        time.sleep(4)
 
         driver.execute_script("document.querySelector('video').pause()")
         height = driver.execute_script("return document.documentElement.scrollHeight")
