@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+
+  .filters{
+    position: sticky;
+  }
+
+  .top_btn{
+    cursor: pointer;
+    padding:0.2rem 1rem;
+  }
+  .angerC{
+    color: #910513;
+    border-color: #910513;
+  }
+
+  .fearC{
+    color: #000000;
+    border-color: #000000;
+  }
+
+  .loveC{
+    color: rgb(248, 114, 136);
+    border-color: rgb(248, 114, 136);
+  }
+
+  .joyC{
+    color: #ffc107;
+    border-color: #ffc107;
+  }
+
+  .sadnessC{
+    color: #007bff;
+    border-color: #007bff;
+  }
+
+  .surpriseC{
+    color: orange;
+    border-color: orange;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  .comments-container {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .comment {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .comment p {
+    margin: 0;
+  }
+
+  .love {
+    color: rgb(248, 114, 136); 
+  }
+
+  .shame {
+    color: #ff0000;
+  }
+/*
+  .neutral{
+    color:#007bff;
+  }
+  */
+  .joy{
+    color:#ffc107; 
+  }
+  .fear{
+    color:#000000;
+  }
+  .sadness{
+   color:#007bff;
+  }
+  .anger{
+    color:#910513;
+  }
+  .surprise{
+    color:orange;
+  }
+
+  .chart-container{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 70%;
+    height: 70%;
+  }
