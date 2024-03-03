@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentiment Classified Comments</title>
+  <link rel="stylesheet" href="/static/result.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sentiment Classified Top {{n}} Comments</h1>
+    <div class="filters">
+      <button class="top_btn angerC">😡 Anger -- {{ang}}</button>
+      <button class="top_btn loveC">🥰 Love -- {{love}}</button>
+      <button class="top_btn fearC">😨 Fear -- {{fear}}</button>
+      <button class="top_btn joyC">😄 Joy -- {{joy}}</button>
+      <button class="top_btn sadnessC">😥 Sadness -- {{sad}}</button>
+      <button class="top_btn surpriseC">😯 Surprise -- {{sur}}</button>
+    </div>
+      
+      
+        
+    <div id="commentsContainer" class="comments-container">
+      <!-- Comments display here -->
+      {% for i in comments %}
+        <div class="comment">
+          {% set item_1 = comments[loop.index-1] %}
+          {% set item_2 = labels[loop.index-1] %}
+          {% if item_2 == 'anger' %}
+            <div class="anger">
+              <p> {{item_1}} : {{item_2|join(' ')}}</p> 
+            </div>
+          {% endif %}
+          {% if item_2 == 'love' %}
+            <div class="love">
+              <p> {{item_1}} : {{item_2|join(' ')}}</p>
+            </div>
+          {% endif %}
+          {% if item_2 == 'fear' %}
+            <div class="fear">
+              <p> {{item_1}} : {{item_2|join(' ')}}</p>
+            </div>
+          {% endif %}
+          {% if item_2 == 'joy' %}
+            <div class="joy">
+              <p> {{item_1}} : {{item_2|join(' ')}}</p>
+            </div>
+          {% endif %}
+          {% if item_2 == 'sadness' %}
+            <div class="sadness">
+              <p> {{item_1}} : {{item_2|join(' ')}}</p>
+            </div>
+          {% endif %}
+          {% if item_2 == 'surprise' %}
+            <div class="surprise">
+              <p> {{item_1}} : {{item_2|join(' ')}}</p>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div id="chartContainer" class="chart-container">
+      <canvas id="sentimentChart"></canvas>
+    </div>
+  </div>
+  <script>
+    const data = {{ e_no|tojson }}
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/result.js"></script>
+</body>
+</html>
+
+

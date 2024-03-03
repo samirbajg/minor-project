@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Comment Sentiment Analysis</title>
+  <link rel="stylesheet" href="/static/mainpage.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-ySiNHyKJrgnQxXL79l9JRuhMNvpu2QzI0jrLoA2KzIUwJLOJQJ+9yJbDWuB2c8Z13XImUgy7T1pDZ2IaW8rGIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fab fa-youtube"></i> : YouTube : Comment Sentiment Analysis</h1>
+    <div class="input-container">
+      <form action="results" method="POST">
+        <input type="link" name="url" id="UrlInput" placeholder="Enter youtube video url here" required>
+        <button id="button" value="click" onclick="Submithandler()"/><i class="fas fa-search"></i> Analyze Comments</button>
+        <div class="loader">
+          <div class="loading"></div>
+        </div>
+      </form>
+    </div>
+    {% if error_msg %}
+      <p style="color:red;"> {{error_msg}} </p>
+    {% endif %}
+  </div>
+
+  <script>
+
+    function Submithandler(){
+      var urlinput = document.getElementById('UrlInput').value;
+      if(urlinput.length === 0){
+        document.getElementsByClassName("loader")[0].style.display = "none";
+      }
+      else{
+        document.getElementsByClassName("loader")[0].style.display = "block";
+      } 
+    }    
+  </script>
+</body>
+</html>
+
